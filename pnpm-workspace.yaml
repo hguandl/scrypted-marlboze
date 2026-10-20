@@ -1,0 +1,7 @@
+# Preserve SDK command aliases used by its CLI dispatcher (POSIX).
+preferSymlinkedExecutables: true
+
+# Optional WebSocket native accelerator from the SDK's dependency tree.
+# The camera input does not use it; retain the JavaScript fallback.
+allowBuilds:
+  bufferutil: false

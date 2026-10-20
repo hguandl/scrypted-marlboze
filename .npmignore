@@ -7,3 +7,6 @@ src
 .vscode
 dist/*.js
 .venv
+test/
+AGENTS.md
+REVIEW.md

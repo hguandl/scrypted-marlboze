@@ -1,9 +1,11 @@
 {
-   "name": "@scrypted/vscode-typescript",
+   "name": "scrypted-marlboze",
+   "version": "0.1.0",
    "scripts": {
       "scrypted-setup-project": "scrypted-setup-project",
       "prescrypted-setup-project": "scrypted-package-json",
       "build": "scrypted-webpack",
+      "test": "node --experimental-strip-types --test test/*.test.ts",
       "prepublishOnly": "NODE_ENV=production scrypted-webpack",
       "prescrypted-vscode-launch": "scrypted-webpack",
       "scrypted-vscode-launch": "scrypted-deploy-debug",
@@ -15,10 +17,17 @@
    },
    "scrypted": {
       "rollup": true,
-      "name": "TypeScript Light",
-      "type": "Light",
+      "name": "Marlboze",
+      "type": "DeviceProvider",
       "interfaces": [
-         "OnOff"
+         "ScryptedSystemDevice",
+         "ScryptedDeviceCreator",
+         "DeviceProvider",
+         "DeviceCreator"
+      ],
+      "pluginDependencies": [
+         "@scrypted/prebuffer-mixin",
+         "@scrypted/snapshot"
       ]
    },
    "dependencies": {
